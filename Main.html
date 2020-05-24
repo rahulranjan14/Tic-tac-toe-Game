@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+
+        div.box{
+            text-align: center;
+            height:50px;
+            width: 50px;
+        }
+
+        p.center{
+            display: inline-block;
+            color: black;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: large;
+            font-weight: bolder;
+        }
+
+        p.result{
+             font-family: Florence, cursive;;
+            font-weight: bolder;
+            font-size: x-large;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, tr, td {
+            border: 1px solid black;
+        }
+
+        td:hover {background-color: #EAF0F1;}
+
+        td {
+                 background-color: 	#F5F5F5;
+              color: white;
+            }
+
+        h1{
+            font-family: Florence, cursive;
+        }
+
+        p.refresh{
+            font-family: "Courier New", Courier, monospace;
+        }
+
+
+    </style>
+
+
+
+
+
+</head>
+<body align="center">
+
+    <h1>Tic-Tac-Toe</h1>
+
+<table border="border" align="center">
+    <tr>
+        <td><div class="box" onclick="a()"> <p class="center" id="a"></p> </div></td>
+        <td><div class="box" onclick="b()"> <p class="center" id="b"></p> </div></td>
+        <td><div class="box" onclick="c()"> <p class="center" id="c"></p> </div></td>
+    </tr>
+
+    <tr>
+        <td><div class="box" onclick="d()"> <p class="center" id="d"></p> </div></td>
+        <td><div class="box" onclick="e()"> <p class="center" id="e"></p> </div></td>
+        <td><div class="box" onclick="f()"> <p class="center" id="f"></p></div></td>
+    </tr>
+
+    <tr>
+        <td><div class="box" onclick="g()"> <p class="center" id="g"></p> </div></td>
+        <td><div class="box" onclick="h()"> <p class="center" id="h"></p> </div></td>
+        <td><div class="box" onclick="i()"> <p class="center" id="i"></p> </div></td>
+    </tr>
+
+    
+</table>
+
+<p class="result" id="para"></p>
+<p class="refresh" id="refresh"></p>
+
+
+
+<script>
+
+    var a;
+    var b;
+    var c;
+    var d;
+    var e;
+    var f;
+    var g;
+    var h;
+    var i;
+
+
+   var count=0;
+
+    function a()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("a").innerHTML = "X";
+            a=1;
+        }
+        else{
+            document.getElementById("a").innerHTML = "O";
+            a=0;
+        }
+        count++;
+        winner();
+    }
+
+
+
+    function b()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("b").innerHTML = "X";
+            b=1;
+        }
+        else{
+            document.getElementById("b").innerHTML = "O";
+            b=0;
+        }
+        count++;
+        winner();
+    }
+
+
+    function c()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("c").innerHTML = "X";
+            c=1;
+        }
+        else{
+            document.getElementById("c").innerHTML = "O";
+            c=0;
+        }
+        count++;
+        winner();
+    }
+
+
+    function d()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("d").innerHTML = "X";
+            d=1;
+        }
+        else{
+            document.getElementById("d").innerHTML = "O";
+            d=0;
+        }
+        count++;
+        winner();
+    }
+
+
+
+    function e()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("e").innerHTML = "X";
+            e=1;
+        }
+        else{
+            document.getElementById("e").innerHTML = "O";
+            e=0;
+        }
+        count++;
+        winner();
+    }
+
+
+    function f()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("f").innerHTML = "X";
+            f=1;
+        }
+        else{
+            document.getElementById("f").innerHTML = "O";
+            f=0;
+        }
+        count++;
+        winner();
+    }
+
+
+    function g()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("g").innerHTML = "X";
+            g=1;
+        }
+        else{
+            document.getElementById("g").innerHTML = "O";
+            g=0;
+        }
+        count++;
+        winner();
+    }
+
+
+    function h()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("h").innerHTML = "X";
+            h=1;
+        }
+        else{
+            document.getElementById("h").innerHTML = "O";
+            h=0;
+        }
+        count++;
+        winner();
+    }
+
+
+    function i()
+    {
+        if(count%2==0)
+        {
+            document.getElementById("i").innerHTML = "X";
+            i=1;
+        }
+        else{
+            document.getElementById("i").innerHTML = "O";
+            i=0;
+        }
+        count++;
+        winner();
+    }
+    
+
+    function winner()
+    {
+        if((a==1&&d==1&&g==1) || (a==1&&b==1&&c==1) || (b==1&&e==1&&h==1) || (d==1&&e==1&&f==1) || (c==1&&f==1&&i==1) || (g==1&&h==1&&i==1) || 
+        (a==1&&e==1&&i==1) || (g==1&&e==1&&c==1) )
+        {
+        document.getElementById("para").innerHTML = "Player X won";
+        document.getElementById("refresh").innerHTML = "Please refresh to restart the game";
+       
+        }
+
+        else if((a==0&&d==0&&g==0) || (a==0&&b==0&&c==0) || (b==0&&e==0&&h==0) || (d==0&&e==0&&f==0) || (c==0&&f==0&&i==0) || (g==0&&h==0&&i==0) || 
+        (a==0&&e==0&&i==0) || (g==0&&e==0&&c==0) )
+        {
+        document.getElementById("para").innerHTML = "Player O won";
+        document.getElementById("refresh").innerHTML = "Please refresh to restart the game";
+        }
+
+        else if(count==9){
+            document.getElementById("para").innerHTML = "Match tie";
+            document.getElementById("refresh").innerHTML = "Please refresh to restart the game";
+           
+        }
+
+
+
+    }
+    
+    </script>
+
+    
+</body>
+</html>
